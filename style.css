@@ -1,5 +1,5 @@
 /* =============================================
-   Weather App — Clean Minimal
+   Weather App — Clean Minimal Design
    ============================================= */
 
 *, *::before, *::after {
@@ -31,14 +31,14 @@ body {
     padding: 0;
 }
 
-/* --- App --- */
+/* --- App container --- */
 .app {
     width: 100%;
     max-width: 440px;
     padding: 48px 20px 40px;
 }
 
-/* --- Search --- */
+/* --- Search bar --- */
 .search {
     display: flex;
     gap: 8px;
@@ -84,7 +84,7 @@ body {
 .search button:hover { opacity: 0.85; }
 .search button:active { opacity: 0.7; }
 
-/* --- Error --- */
+/* --- Error message --- */
 .error {
     display: none;
     padding: 12px 16px;
@@ -98,7 +98,7 @@ body {
 
 .error.visible { display: block; }
 
-/* --- Loader --- */
+/* --- Loading animation --- */
 .loader {
     display: none;
     justify-content: center;
@@ -136,7 +136,7 @@ body {
     40% { opacity: 1; transform: scale(1); }
 }
 
-/* --- Weather Card --- */
+/* --- Weather card --- */
 .weather {
     display: none;
     animation: fadeIn 0.35s ease;
@@ -149,7 +149,7 @@ body {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* -- Now Section -- */
+/* Current weather section */
 .now {
     background: var(--card);
     border-radius: var(--radius);
@@ -196,7 +196,7 @@ body {
     color: var(--text);
 }
 
-/* -- Details Row -- */
+/* Details row */
 .details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -226,10 +226,10 @@ body {
     font-weight: 600;
 }
 
-/* -- Forecast -- */
+/* Forecast row */
 .forecast {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     gap: 8px;
 }
 
@@ -260,18 +260,16 @@ body {
     font-weight: 600;
 }
 
-/* --- Responsive --- */
+/* --- Responsive adjustments --- */
 @media (max-width: 480px) {
     .app { padding: 24px 16px 32px; }
     .temp { font-size: 2.2rem; }
     .now { padding: 18px 16px; gap: 12px; }
     .now img { width: 56px; height: 56px; }
     .now-info h1 { font-size: 1.1rem; }
-
     .details { gap: 6px; }
     .detail { padding: 12px 8px; }
     .detail-value { font-size: 0.9rem; }
-
     .forecast { gap: 5px; }
     .fc { padding: 10px 4px; }
     .fc img { width: 30px; height: 30px; }

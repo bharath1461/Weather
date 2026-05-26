@@ -8,11 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app">
-        <!-- Search -->
+        <!-- Search bar -->
         <form class="search" id="search-form">
             <input type="text" id="city-input" placeholder="Search city..." required autofocus>
             <button type="submit" id="search-btn" aria-label="Search">
@@ -22,14 +22,15 @@
             </button>
         </form>
 
-        <!-- Error -->
+        <!-- Error message -->
         <p class="error" id="error"></p>
 
-        <!-- Loading -->
+        <!-- Loading dots -->
         <div class="loader" id="loader"><div class="dot-pulse"></div></div>
 
-        <!-- Weather -->
+        <!-- Weather display (hidden until a search is made) -->
         <div class="weather" id="weather">
+            <!-- Current weather -->
             <div class="now">
                 <img id="w-icon" src="" alt="" width="72" height="72">
                 <div class="now-info">
@@ -39,6 +40,7 @@
                 <div class="temp" id="w-temp">—°</div>
             </div>
 
+            <!-- Weather details -->
             <div class="details">
                 <div class="detail" id="d-feels">
                     <span class="detail-label">Feels like</span>
@@ -54,10 +56,11 @@
                 </div>
             </div>
 
+            <!-- 5-day forecast -->
             <div class="forecast" id="forecast"></div>
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="app.js"></script>
 </body>
 </html>
