@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple weather app. Search any city for current weather and forecast.">
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app">
+        <!-- Search -->
+        <form class="search" id="search-form">
+            <input type="text" id="city-input" placeholder="Search city..." required autofocus>
+            <button type="submit" id="search-btn" aria-label="Search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+            </button>
+        </form>
+
+        <!-- Error -->
+        <p class="error" id="error"></p>
+
+        <!-- Loading -->
+        <div class="loader" id="loader"><div class="dot-pulse"></div></div>
+
+        <!-- Weather -->
+        <div class="weather" id="weather">
+            <div class="now">
+                <img id="w-icon" src="" alt="" width="72" height="72">
+                <div class="now-info">
+                    <h1 id="w-city">—</h1>
+                    <p class="desc" id="w-desc">—</p>
+                </div>
+                <div class="temp" id="w-temp">—°</div>
+            </div>
+
+            <div class="details">
+                <div class="detail" id="d-feels">
+                    <span class="detail-label">Feels like</span>
+                    <span class="detail-value" id="w-feels">—°</span>
+                </div>
+                <div class="detail" id="d-humidity">
+                    <span class="detail-label">Humidity</span>
+                    <span class="detail-value" id="w-humidity">—%</span>
+                </div>
+                <div class="detail" id="d-wind">
+                    <span class="detail-label">Wind</span>
+                    <span class="detail-value" id="w-wind">— km/h</span>
+                </div>
+            </div>
+
+            <div class="forecast" id="forecast"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
